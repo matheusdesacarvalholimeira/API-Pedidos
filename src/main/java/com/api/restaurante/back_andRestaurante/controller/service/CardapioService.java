@@ -39,6 +39,11 @@ public class CardapioService {
         cardapioRepository.save(cardapio);
     }
 
+    public Cardapio getOneIten(UUID idCardapio){
+        Cardapio iten = cardapioRepository.findById(idCardapio).orElseThrow(() -> new  RuntimeException("Itens not found"));
+        return iten;
+    }
+
     //public void deletCardapio(UUID idCardapio){
 
         //Cardapio cardapio = cardapioRepository.findById(idCardapio).orElseThrow(()-> new RuntimeException("Itens not found"));

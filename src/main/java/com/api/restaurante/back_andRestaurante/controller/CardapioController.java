@@ -35,4 +35,10 @@ public class CardapioController {
         //return ResponseEntity.ok().body("mudo");
     //}
 
+    @GetMapping("/getOneInten/{idCardapio}")
+    public ResponseEntity<Cardapio> getOneInten(@PathVariable(value = "idCardapio")UUID idCardapio){
+       Cardapio iten = cardapioService.getOneIten(idCardapio);
+        return ResponseEntity.ok().body(iten);
+    }
+
 }
