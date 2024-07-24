@@ -18,11 +18,11 @@ public class CardapioController {
     @Autowired
     CardapioService cardapioService;
 
-    //@PostMapping("/addIntens")
-    //public ResponseEntity<String> addIntens(@RequestBody addIntensDTO body){
-       // cardapioService.cadastrarintens(body.namePoduct(), body.quantidade(), body.disponibilidade(), body.preco());
-       // return ResponseEntity.ok().body("Confia que criou");
-    //}
+    @PostMapping("/addIntens")
+    public ResponseEntity<String> addIntens(@RequestBody addIntensDTO body){
+        cardapioService.cadastrarintens(body.namePoduct(), body.quantidade(), body.disponibilidade(), body.preco());
+        return ResponseEntity.ok().body("Confia que criou");
+    }
 
     @GetMapping("/getIntens")
     public ResponseEntity<List<Cardapio>> listIntens(){
